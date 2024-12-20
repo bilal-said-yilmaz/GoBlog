@@ -1,2 +1,2 @@
-# GoBlog
+# BlogGo
 My blog site project.
