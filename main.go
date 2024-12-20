@@ -41,7 +41,7 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Validate email format
+
 	if _, err := mail.ParseAddress(email); err != nil {
 		http.Error(w, "Invalid email format.", http.StatusBadRequest)
 		return
@@ -70,19 +70,3 @@ func sendEmail(name, email, phone, message string) error {
 	}
 	return nil
 }
-
-/*
-	post := adminModels.Post{}.Get(1)
-	post.Update("Title", "Gooo ile web programlama")
-	fmt.Println(post.Title)
-	//post.Delete(post.PictureURL)
-	posts := adminModels.Post{}.GetAll("Description=?", "")
-	fmt.Println(posts)
-
-	posts = adminModels.Post{}.GetAll("Description=?", "deneme12")
-	fmt.Println(posts)
-
-	post = adminModels.Post{}.Get(1)
-
-	post.Updates(adminModels.Post{Title: "Goooo ile web programlama", Content: "Go nedir ?", Slug: "go-nedir"})
-*/
