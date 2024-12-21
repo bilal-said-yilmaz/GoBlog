@@ -4,13 +4,13 @@ services:
   db:
     image: postgres:16
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Golang007
-      POSTGRES_DB: blog_go
+      POSTGRES_USER: your_postgres_username
+      POSTGRES_PASSWORD: your_postgres_password
+      POSTGRES_DB: your_postgres_db_name
     ports:
       - "5432:5432"
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - db_data:your_db_path
 
   app:
     build: .
@@ -19,9 +19,9 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: 5432
-      DB_USER: postgres
-      DB_PASSWORD: Golang007
-      DB_NAME: blog_db
+      DB_USER: your_db_user
+      DB_PASSWORD: your_db_password
+      DB_NAME: your_db_name
     ports:
       - "8080:8080"
 
